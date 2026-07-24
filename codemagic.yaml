@@ -1,0 +1,34 @@
+workflows:
+  ios-workflow:
+    name: iOS Build
+    instance_type: mac_mini_m1
+    environment:
+      vars:
+        FLUTTER_VERSION: "3.24.0"
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Install Flutter dependencies
+        script: |
+          flutter pub get
+      - name: Install iOS dependencies
+        script: |
+          cd ios
+          pod install
+          cd ..
+      - name: Build iOS
+        script: |
+          flutter build ios --release --no-codesign
+      - name: Create IPA
+        script: |
+          mkdir -p build/ios/ipa
+          cd build/ios/iphoneos
+          mkdir -p Payload
+          cp -r Runner.app Payload/
+          zip -r ../ipa/Runner.ipa Payload
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - fifa.peeranat2024@gmail.com
