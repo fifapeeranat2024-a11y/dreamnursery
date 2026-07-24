@@ -46,7 +46,7 @@ class ChildCareApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ChildCare Pro',
+      title: 'Dreamnursery',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,
@@ -256,7 +256,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                 ),
                 const SizedBox(height: 40),
                 const Text(
-                  'CHILDCARE PRO',
+                  'DREAMNURSERY',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 28,
