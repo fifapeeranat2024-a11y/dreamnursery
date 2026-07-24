@@ -210,7 +210,7 @@ class AppState extends ChangeNotifier {
   // ==================== INITIALIZATION ====================
   void _initDefaultData() {
     users.add(UserModel(
-      email: 'developer@childcare.com',
+      email: 'developer@dreamnursery.com',
       phone: '0899999999',
       password: 'Dev@123456',
       role: UserRole.developer,
@@ -218,7 +218,7 @@ class AppState extends ChangeNotifier {
     ));
 
     users.add(UserModel(
-      email: 'admin@childcare.com',
+      email: 'admin@dreamnursery.com',
       phone: '0800000000',
       password: 'Admin@123',
       role: UserRole.admin,
@@ -226,15 +226,14 @@ class AppState extends ChangeNotifier {
     ));
 
     adminSecretCodes = List<String>.from(defaultSecretCodes);
-    childStatuses['สมชาย'] = 'ยังไม่ส่งเด็ก';
-    childStatuses['สมหญิง'] = 'ยังไม่ส่งเด็ก';
+    
 
     announcements.add(Announcement(
       id: '1',
-      title: 'ยินดีต้อนรับสู่ ChildCare Pro',
+      title: 'ยินดีต้อนรับสู่ Dreamnursery',
       content: 'ระบบรับ-ส่งเด็กอัจฉริยะ พร้อมให้บริการแล้ว',
       createdAt: DateTime.now(),
-      adminEmail: 'admin@childcare.com',
+      adminEmail: 'admin@dreamnursery.com',
     ));
   }
 
@@ -710,7 +709,7 @@ class AppState extends ChangeNotifier {
       title: title,
       content: content,
       createdAt: DateTime.now(),
-      adminEmail: currentUser?.email ?? 'admin@childcare.com',
+      adminEmail: currentUser?.email ?? 'admin@Dreamnursery.com',
     );
     announcements.insert(0, newAnnouncement);
     _saveAllData();
