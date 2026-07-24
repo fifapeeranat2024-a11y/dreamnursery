@@ -4,7 +4,7 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       vars:
-        FLUTTER_VERSION: "3.24.0"
+        FLUTTER_VERSION: "3.24.0"  # ✅ เปลี่ยนเป็น 3.24.0
       xcode: latest
       cocoapods: default
     scripts:
